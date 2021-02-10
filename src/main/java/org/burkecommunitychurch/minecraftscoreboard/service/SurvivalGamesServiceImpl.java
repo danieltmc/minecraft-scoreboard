@@ -26,22 +26,22 @@ public class SurvivalGamesServiceImpl implements SurvivalGamesService {
 
     @Override
     public List<SurvivalGamesDTO> getAllOrderByCoins() {
-        return mapper.toDtoList(repo.findAllOrderByCoinsDesc());
+        return mapper.toDtoList(repo.findAllByOrderByCoinsDesc());
     }
 
     public List<SurvivalGamesDTO> getAllOrderByKills() {
-        return mapper.toDtoList(repo.findAllOrderByKillsDesc());
+        return mapper.toDtoList(repo.findAllByOrderByKillsDesc());
     }
 
     public List<SurvivalGamesDTO> getAllOrderByDeaths() {
-        return mapper.toDtoList(repo.findAllOrderByDeathsDesc());
+        return mapper.toDtoList(repo.findAllByOrderByDeathsDesc());
     }
 
     public List<SurvivalGamesDTO> getAllOrderByWins() {
-        return mapper.toDtoList(repo.findAllOrderByWinsDesc());
+        return mapper.toDtoList(repo.findAllByOrderByWinsDesc());
     }
 
     public List<SurvivalGamesDTO> getAllOrderByGamesPlayed() {
-        return mapper.toDtoList(repo.findAllOrderByGamesplayedDesc());
+        return mapper.toDtoList(repo.findAllByOrderByGamesplayedDesc());
     }
 }

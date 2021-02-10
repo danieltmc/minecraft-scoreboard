@@ -26,11 +26,11 @@ public class PartiesPartiesServiceImpl implements PartiesPartiesService {
 
     @Override
     public List<PartiesPartiesDTO> getAllOrderByKills() {
-        return mapper.toDtoList(repo.findAllOrderByKillsDesc());
+        return mapper.toDtoList(repo.findAllByOrderByKillsDesc());
     }
 
     @Override
     public List<PartiesPartiesDTO> getAllOrderByExperience() {
-        return mapper.toDtoList(repo.findAllOrderByExperienceDesc());
+        return mapper.toDtoList(repo.findAllByOrderByExperienceDesc());
     }
 }
