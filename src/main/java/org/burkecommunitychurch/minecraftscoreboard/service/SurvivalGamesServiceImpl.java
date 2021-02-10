@@ -42,6 +42,6 @@ public class SurvivalGamesServiceImpl implements SurvivalGamesService {
     }
 
     public List<SurvivalGamesDTO> getAllOrderByGamesPlayed() {
-        return mapper.toDtoList(repo.findAllByOrderByGamesplayedDesc());
+        return mapper.toDtoList(repo.findAllByOrderByGamesPlayedDesc());
     }
 }

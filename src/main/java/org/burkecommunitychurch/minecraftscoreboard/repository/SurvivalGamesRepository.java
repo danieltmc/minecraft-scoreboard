@@ -18,5 +18,5 @@ public interface SurvivalGamesRepository extends CrudRepository<SurvivalGames, S
 
     List<SurvivalGames> findAllByOrderByWinsDesc();
 
-    List<SurvivalGames> findAllByOrderByGamesplayedDesc();
+    List<SurvivalGames> findAllByOrderByGamesPlayedDesc();
 }
