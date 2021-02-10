@@ -13,8 +13,6 @@ public interface PartiesPartiesRepository extends CrudRepository<PartiesParties,
     List<PartiesParties> findAllOrderByKillsDesc();
 
     List<PartiesParties> findAllOrderByExperienceDesc();
-    
-    List<PartiesParties> findDistinctByName();
 
     List<PartiesParties> findByNameOrderByKillsDesc(String name);
 

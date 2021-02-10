@@ -9,8 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OneInTheBattleRepository extends CrudRepository<OneInTheBattle, String> {
     List<OneInTheBattle> findAll();
-    
-    List<OneInTheBattle> findDistinctByPlayerUuid();
-
-    List<OneInTheBattle> findDistinctByPlayerName();
 }

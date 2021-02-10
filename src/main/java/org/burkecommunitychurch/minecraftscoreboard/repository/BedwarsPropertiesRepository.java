@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BedwarsPropertiesRepository extends CrudRepository<BedwarsProperties, String> {
     List<BedwarsProperties> findAll();
-    
-    List<BedwarsProperties> findDistinctByPlayerUuid();
 
     List<BedwarsProperties> findByIdOrderByValueDesc(String id);
 }
