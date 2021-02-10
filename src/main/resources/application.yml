@@ -13,11 +13,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
-        format_sql: true
+        format-sql: true
         jdbc:
-          time_zone: UTC
+          time-zone: UTC
         temp:
-          use_jdbc_metadata_defaults: false
+          use-jdbc-metadata-defaults: false
   datasource:
     url: jdbc:mysql://localhost:3306/mcbcc
     username: mcbcc
@@ -36,8 +36,9 @@ spring:
 logging:
   level:
     ROOT: WARN
-    org.springframework: WARN
-    org.hibernate: WARN
+    org:
+      springframework: WARN
+      hibernate: WARN
 
 server:
   port: 8080
