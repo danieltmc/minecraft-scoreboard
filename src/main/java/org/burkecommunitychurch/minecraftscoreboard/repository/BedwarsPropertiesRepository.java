@@ -12,5 +12,5 @@ public interface BedwarsPropertiesRepository extends CrudRepository<BedwarsPrope
     
     List<BedwarsProperties> findDistinctByPlayerUuid();
 
-    List<BedwarsProperties> findByIdOrderByValueDesc();
+    List<BedwarsProperties> findByIdOrderByValueDesc(String id);
 }

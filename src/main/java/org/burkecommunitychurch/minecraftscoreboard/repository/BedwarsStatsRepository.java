@@ -12,5 +12,5 @@ public interface BedwarsStatsRepository extends CrudRepository<BedwarsStats, Str
     
     List<BedwarsStats> findDistinctByPlayerUuid();
 
-    List<BedwarsStats> findByKeyOrderByValueAsc();
+    List<BedwarsStats> findByKeyOrderByValueDesc(String key);
 }
