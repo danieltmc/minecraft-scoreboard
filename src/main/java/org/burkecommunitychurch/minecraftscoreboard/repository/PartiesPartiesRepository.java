@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 public interface PartiesPartiesRepository extends CrudRepository<PartiesParties, String> {
     List<PartiesParties> findAll();
 
-    List<PartiesParties> findAllOrderByKillsDesc();
+    List<PartiesParties> findAllByOrderByKillsDesc();
 
-    List<PartiesParties> findAllOrderByExperienceDesc();
+    List<PartiesParties> findAllByOrderByExperienceDesc();
 
     List<PartiesParties> findByNameOrderByKillsDesc(String name);
 

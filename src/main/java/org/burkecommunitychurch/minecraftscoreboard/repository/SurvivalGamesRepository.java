@@ -10,13 +10,13 @@ import org.springframework.stereotype.Repository;
 public interface SurvivalGamesRepository extends CrudRepository<SurvivalGames, String> {
     List<SurvivalGames> findAll();
 
-    List<SurvivalGames> findAllOrderByCoinsDesc();
+    List<SurvivalGames> findAllByOrderByCoinsDesc();
 
-    List<SurvivalGames> findAllOrderByKillsDesc();
+    List<SurvivalGames> findAllByOrderByKillsDesc();
 
-    List<SurvivalGames> findAllOrderByDeathsDesc();
+    List<SurvivalGames> findAllByOrderByDeathsDesc();
 
-    List<SurvivalGames> findAllOrderByWinsDesc();
+    List<SurvivalGames> findAllByOrderByWinsDesc();
 
-    List<SurvivalGames> findAllOrderByGamesplayedDesc();
+    List<SurvivalGames> findAllByOrderByGamesplayedDesc();
 }
