@@ -13,5 +13,5 @@ import lombok.NoArgsConstructor;
 public class BedwarsStatsDTO {
     private String playerUuid;
     private String key;
-    private String value;
+    private float value;
 }
