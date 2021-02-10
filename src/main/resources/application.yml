@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    default: local
+  application:
+    name: minecraft-scoreboard
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+        temp:
+          use_jdbc_metadata_defaults: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/mcbcc
+    username: mcbcc
+    password: burkecommunity
+    driverClassName: org.mysql.Driver
+    platform: mysql
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jackson:
+    serialization:
+      indent-output: true
+
+logging:
+  level:
+    ROOT: WARN
+    org.springframework: WARN
+    org.hibernate: WARN
+
+server:
+  port: 8080
