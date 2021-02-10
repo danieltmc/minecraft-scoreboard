@@ -1,5 +1,8 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.mapper;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.PartiesPartiesDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.PartiesParties;
 
@@ -20,5 +23,11 @@ public abstract class PartiesPartiesMapper {
         dto.setExperience(partiesParties.getExperience());
         dto.setFollow(partiesParties.getFollow());
         return dto;
+    }
+
+    public List<PartiesPartiesDTO> toDtoList(List<PartiesParties> list) {
+        return list.stream().map(pp ->
+            toDto(pp))
+            .collect(Collectors.toList());
     }
 }

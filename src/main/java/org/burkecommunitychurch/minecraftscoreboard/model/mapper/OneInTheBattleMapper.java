@@ -1,5 +1,8 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.mapper;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.OneInTheBattleDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.OneInTheBattle;
 
@@ -12,5 +15,11 @@ public abstract class OneInTheBattleMapper {
         dto.setLoadout(oneInTheBattle.getLoadout());
         dto.setInventory(oneInTheBattle.getInventory());
         return dto;
+    }
+
+    public List<OneInTheBattleDTO> toDtoList(List<OneInTheBattle> list) {
+        return list.stream().map(oitb ->
+            toDto(oitb))
+            .collect(Collectors.toList());
     }
 }

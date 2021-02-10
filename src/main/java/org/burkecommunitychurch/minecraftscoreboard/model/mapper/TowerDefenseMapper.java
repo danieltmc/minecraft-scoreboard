@@ -1,5 +1,8 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.mapper;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.TowerDefenseDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.TowerDefense;
 
@@ -10,5 +13,11 @@ public abstract class TowerDefenseMapper {
         dto.setPlayerName(towerDefense.getPlayerName());
         dto.setData(towerDefense.getData());
         return dto;
+    }
+
+    public List<TowerDefenseDTO> toDtoList(List<TowerDefense> list) {
+        return list.stream().map(td ->
+            toDto(td))
+            .collect(Collectors.toList());
     }
 }
