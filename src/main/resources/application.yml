@@ -22,7 +22,7 @@ spring:
     url: jdbc:mysql://localhost:3306/mcbcc
     username: mcbcc
     password: burkecommunity
-    driverClassName: org.mysql.Driver
+    driverClassName: com.mysql.jdbc.Driver
     platform: mysql
     hikari:
       maximum-pool-size: 10
