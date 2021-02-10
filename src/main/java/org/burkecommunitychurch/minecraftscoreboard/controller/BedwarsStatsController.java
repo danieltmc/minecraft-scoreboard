@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.http.MediaType;
 
 @RestController
-@RequestMapping(value = "/api/scores/bedwarsstats")
+@RequestMapping(value = "/api/scores/bedwarsstats", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public class BedwarsStatsController {
     @Autowired
     private BedwarsStatsService service;
