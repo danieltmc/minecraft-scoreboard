@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.OneInTheBattleDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.OneInTheBattle;
+import org.mapstruct.Mapper;
 
+@Mapper
 public abstract class OneInTheBattleMapper {
     public OneInTheBattleDTO toDto(OneInTheBattle oneInTheBattle) {
         OneInTheBattleDTO dto = new OneInTheBattleDTO();

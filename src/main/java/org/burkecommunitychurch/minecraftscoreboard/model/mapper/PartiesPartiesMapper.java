@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.PartiesPartiesDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.PartiesParties;
+import org.mapstruct.Mapper;
 
+@Mapper
 public abstract class PartiesPartiesMapper {
     public PartiesPartiesDTO toDto(PartiesParties partiesParties) {
         PartiesPartiesDTO dto = new PartiesPartiesDTO();

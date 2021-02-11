@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.PartiesSchemaHistoryDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.PartiesSchemaHistory;
+import org.mapstruct.Mapper;
 
+@Mapper
 public abstract class PartiesSchemaHistoryMapper {
     public PartiesSchemaHistoryDTO toDto(PartiesSchemaHistory partiesSchemaHistory) {
         PartiesSchemaHistoryDTO dto = new PartiesSchemaHistoryDTO();

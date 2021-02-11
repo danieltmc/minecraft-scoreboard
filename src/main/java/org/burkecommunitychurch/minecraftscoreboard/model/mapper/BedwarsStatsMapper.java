@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsStatsDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.BedwarsStats;
+import org.mapstruct.Mapper;
 
+@Mapper
 public abstract class BedwarsStatsMapper {
     public BedwarsStatsDTO toDto(BedwarsStats bedwarsStats) {
         BedwarsStatsDTO dto = new BedwarsStatsDTO();

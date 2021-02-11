@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsAchievementsDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.BedwarsAchievements;
+import org.mapstruct.Mapper;
 
+@Mapper
 public abstract class BedwarsAchievementsMapper {
     public BedwarsAchievementsDTO toDto(BedwarsAchievements bedwarsAchievements) {
         BedwarsAchievementsDTO dto = new BedwarsAchievementsDTO();

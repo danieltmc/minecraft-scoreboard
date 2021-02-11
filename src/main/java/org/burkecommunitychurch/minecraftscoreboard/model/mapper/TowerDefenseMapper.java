@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.TowerDefenseDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.TowerDefense;
+import org.mapstruct.Mapper;
 
+@Mapper
 public abstract class TowerDefenseMapper {
     public TowerDefenseDTO toDto(TowerDefense towerDefense) {
         TowerDefenseDTO dto = new TowerDefenseDTO();
