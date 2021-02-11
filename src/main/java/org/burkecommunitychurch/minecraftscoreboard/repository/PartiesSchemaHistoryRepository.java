@@ -1,7 +1,7 @@
 package org.burkecommunitychurch.minecraftscoreboard.repository;
 
 import java.util.Collection;
-import java.util.List;
+//import java.util.List;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.PartiesSchemaHistory;
 import org.springframework.data.jpa.repository.Query;
