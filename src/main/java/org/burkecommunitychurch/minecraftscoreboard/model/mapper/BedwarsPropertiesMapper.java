@@ -1,5 +1,6 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.mapper;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +17,12 @@ public abstract class BedwarsPropertiesMapper {
     }
 
     public List<BedwarsPropertiesDTO> toDtoList(List<BedwarsProperties> list) {
+        return list.stream().map(bwp ->
+            toDto(bwp))
+            .collect(Collectors.toList());
+    }
+
+    public List<BedwarsPropertiesDTO> toDtoList(Collection<BedwarsProperties> list) {
         return list.stream().map(bwp ->
             toDto(bwp))
             .collect(Collectors.toList());

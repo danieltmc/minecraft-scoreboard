@@ -1,5 +1,6 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.mapper;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +17,12 @@ public abstract class BedwarsAchievementsMapper {
     }
 
     public List<BedwarsAchievementsDTO> toDtoList(List<BedwarsAchievements> list) {
+        return list.stream().map(bwa ->
+            toDto(bwa))
+            .collect(Collectors.toList());
+    }
+
+    public List<BedwarsAchievementsDTO> toDtoList(Collection<BedwarsAchievements> list) {
         return list.stream().map(bwa ->
             toDto(bwa))
             .collect(Collectors.toList());

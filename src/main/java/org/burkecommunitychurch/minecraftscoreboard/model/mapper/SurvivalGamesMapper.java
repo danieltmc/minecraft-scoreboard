@@ -1,5 +1,6 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.mapper;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,6 +25,12 @@ public abstract class SurvivalGamesMapper {
     }
 
     public List<SurvivalGamesDTO> toDtoList(List<SurvivalGames> list) {
+        return list.stream().map(sg ->
+            toDto(sg))
+            .collect(Collectors.toList());
+    }
+
+    public List<SurvivalGamesDTO> toDtoList(Collection<SurvivalGames> list) {
         return list.stream().map(sg ->
             toDto(sg))
             .collect(Collectors.toList());

@@ -1,5 +1,6 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.mapper;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +17,12 @@ public abstract class TowerDefenseMapper {
     }
 
     public List<TowerDefenseDTO> toDtoList(List<TowerDefense> list) {
+        return list.stream().map(td ->
+            toDto(td))
+            .collect(Collectors.toList());
+    }
+
+    public List<TowerDefenseDTO> toDtoList(Collection<TowerDefense> list) {
         return list.stream().map(td ->
             toDto(td))
             .collect(Collectors.toList());
