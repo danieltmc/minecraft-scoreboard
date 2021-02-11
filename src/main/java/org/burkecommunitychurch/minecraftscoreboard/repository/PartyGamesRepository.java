@@ -1,12 +1,17 @@
 package org.burkecommunitychurch.minecraftscoreboard.repository;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.PartyGames;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PartyGamesRepository extends CrudRepository<PartyGames, String> {
-    List<PartyGames> findAll();
+    //List<PartyGames> findAll();
+
+    @Query(value = "SELECT * FROM PartyGames_new", nativeQuery = true)
+    Collection<PartyGames> findAll();
 }
