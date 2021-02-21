@@ -1,7 +1,8 @@
 package org.burkecommunitychurch.minecraftscoreboard.config;
 
 import java.util.Collections;
-import java.util.function.Predicate;
+
+import com.google.common.base.Predicate;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,10 +22,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 public class SwaggerConfig {
 
-    private static final Predicate<RequestHandler> IS_PROJECT_REQUEST_HANDLER = RequestHandlerSelectors
-        .basePackage("org.burkecommunitychurch.minecraftscoreboard");
+    private static final Predicate<RequestHandler> IS_PROJECT_REQUEST_HANDLER = (Predicate<RequestHandler>) RequestHandlerSelectors
+            .basePackage("org.burkecommunitychurch.minecraftscoreboard");
 
-    private static final Predicate<String> IS_API_PATH = PathSelectors.ant("/api/**");
+    private static final Predicate<String> IS_API_PATH = (Predicate<String>) PathSelectors.ant("/api/**");
 
     private static ApiInfo apiInfo() {
         return new ApiInfoBuilder()
