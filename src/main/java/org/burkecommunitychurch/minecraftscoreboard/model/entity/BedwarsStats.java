@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.burkecommunitychurch.minecraftscoreboard.model.constant.BedwarsStatsKey;
+import org.burkecommunitychurch.minecraftscoreboard.model.constant.BedwarsStatsKeyEnum;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +22,7 @@ public class BedwarsStats {
     @Column(name = "key")
     @Getter
     //private String key;
-    private BedwarsStatsKey key;
+    private BedwarsStatsKeyEnum key;
 
     @Column(name = "value")
     @Getter

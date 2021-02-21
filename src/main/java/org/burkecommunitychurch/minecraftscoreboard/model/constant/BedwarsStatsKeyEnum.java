@@ -1,6 +1,6 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.constant;
 
-public enum BedwarsStatsKey {
+public enum BedwarsStatsKeyEnum {
     BEDS_DESTROYED("bedwars:beds_destroyed"),
     CACHE_RANK("bedwars:cache_rank"),
     DEATHS("bedwars:deaths"),
@@ -16,7 +16,12 @@ public enum BedwarsStatsKey {
 
     private final String sqlKey;
 
-    BedwarsStatsKey(String key) {
+    BedwarsStatsKeyEnum(String key) {
         this.sqlKey = key;
+    }
+
+    @Override
+    public String toString() {
+        return this.sqlKey;
     }
 }
