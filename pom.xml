@@ -45,6 +45,16 @@
 			<artifactId>mapstruct</artifactId>
 			<version>1.4.2.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.mapstruct</groupId>
+					<artifactId>mapstruct</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	</dependencies>
 
 	<build>
