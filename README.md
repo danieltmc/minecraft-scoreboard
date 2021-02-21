@@ -2,6 +2,55 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/danieltmc/Minecraft-Scoreboard)](https://github.com/danieltmc/Minecraft-Scoreboard/commits/master)|![GitHub repo size](https://img.shields.io/github/repo-size/danieltmc/Minecraft-Scoreboard)|![GitHub top language](https://img.shields.io/github/languages/top/danieltmc/Minecraft-Scoreboard.svg)|![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/danieltmc/Minecraft-Scoreboard)|![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/danieltmc/Minecraft-Scoreboard.svg)|![GitHub language count](https://img.shields.io/github/languages/count/danieltmc/Minecraft-Scoreboard)|
 
+## Sample application.yml
+```
+spring:
+  profiles:
+    default: local
+  application:
+    name: minecraft-scoreboard
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format-sql: true
+        jdbc:
+          time-zone: UTC
+        temp:
+          use-jdbc-metadata-defaults: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/mcbcc
+    username: username
+    password: password
+    driverClassName: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jackson:
+    serialization:
+      indent-output: true
+
+logging:
+  level:
+    ROOT: WARN
+    org:
+      springframework: WARN
+      hibernate: WARN
+
+server:
+  port: 8080
+```
+
 ## Technology stack & other Open-source libraries
 
 ### Data
