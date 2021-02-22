@@ -12,7 +12,6 @@ public interface BedwarsStatsRepository extends CrudRepository<BedwarsStats, Str
     @Query(value = "SELECT * FROM mbedwars_player_stats", nativeQuery = true)
     Collection<BedwarsStats> findAll();
 
-    //@Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = ?1", nativeQuery = true)
-    @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = bedwars\\:?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = ?1", nativeQuery = true)
     Collection<BedwarsStats> findByKeyOrderByValueDesc(String key);
 }
