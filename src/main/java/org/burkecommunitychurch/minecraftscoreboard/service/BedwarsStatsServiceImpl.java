@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.burkecommunitychurch.minecraftscoreboard.model.constant.BedwarsStatsKeyEnum;
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsStatsDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.mapper.BedwarsStatsMapper;
 import org.burkecommunitychurch.minecraftscoreboard.repository.BedwarsStatsRepository;
@@ -25,12 +24,8 @@ public class BedwarsStatsServiceImpl implements BedwarsStatsService {
         return mapper.toDtoList(repo.findAll());
     }
 
-    // @Override
-    // public List<BedwarsStatsDTO> getAllByKey(String key) {
-    //     return mapper.toDtoList(repo.findByKeyOrderByValueDesc(key));
-    // }
     @Override
-    public List<BedwarsStatsDTO> getAllByKey(BedwarsStatsKeyEnum key) {
-        return mapper.toDtoList(repo.findByKeyOrderByValueDesc(key.toString()));
+    public List<BedwarsStatsDTO> getAllByKey(String key) {
+        return mapper.toDtoList(repo.findByKeyOrderByValueDesc(key));
     }
 }

@@ -27,9 +27,8 @@ public class BedwarsStatsController {
 
     @GetMapping("/key/{key}")
     public List<BedwarsStatsDTO> getByKey(
-        //@PathVariable String key
         @PathVariable BedwarsStatsKeyEnum key
     ) throws IOException {
-        return service.getAllByKey(key);
+        return service.getAllByKey(key.toString());
     }
 }
