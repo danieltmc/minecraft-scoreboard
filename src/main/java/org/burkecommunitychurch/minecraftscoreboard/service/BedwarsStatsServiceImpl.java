@@ -26,6 +26,32 @@ public class BedwarsStatsServiceImpl implements BedwarsStatsService {
 
     @Override
     public List<BedwarsStatsDTO> getAllByKey(String key) {
-        return mapper.toDtoList(repo.findByKeyOrderByValueDesc(key));
+        switch (key) {
+            case "beds_destroyed":
+                return mapper.toDtoList(repo.findByBedsDestroyedOrderByValueDesc());
+            case "cache_rank":
+                return mapper.toDtoList(repo.findByCacheRankOrderByValueDesc());
+            case "deaths":
+                return mapper.toDtoList(repo.findByDeathsOrderByValueDesc());
+            case "final_kills":
+                return mapper.toDtoList(repo.findByFinalKillsOrderByValueDesc());
+            case "kd":
+                return mapper.toDtoList(repo.findByKDOrderByValueDesc());
+            case "kills":
+                return mapper.toDtoList(repo.findByKillsOrderByValueDesc());
+            case "loses":
+                return mapper.toDtoList(repo.findByLossesOrderByValueDesc());
+            case "play_time":
+                return mapper.toDtoList(repo.findByPlayTimeOrderByValueDesc());
+            case "rank":
+                return mapper.toDtoList(repo.findByRankOrderByValueDesc());
+            case "rounds_played":
+                return mapper.toDtoList(repo.findByRoundsPlayedOrderByValueDesc());
+            case "wins":
+                return mapper.toDtoList(repo.findByWinsOrderByValueDesc());
+            case "wl":
+                return mapper.toDtoList(repo.findByWLOrderByValueDesc());
+        }
+        return mapper.toDtoList(repo.findAll());
     }
 }
