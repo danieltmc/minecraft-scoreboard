@@ -18,10 +18,13 @@ import lombok.Setter;
 public class BedwarsAchievementsDTO {
     @JsonProperty("playerUuid")
     private String playerUuid;
+
     @JsonProperty("userName")
     private String userName;
+    
     @JsonProperty("id")
     private String id;
+    
     @JsonProperty("earnDate")
     private String earnDate;
 }

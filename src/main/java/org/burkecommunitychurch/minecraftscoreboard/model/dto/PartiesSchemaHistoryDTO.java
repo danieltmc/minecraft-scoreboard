@@ -18,12 +18,16 @@ import lombok.Setter;
 public class PartiesSchemaHistoryDTO {
     @JsonProperty("id")
     private int id;
+    
     @JsonProperty("version")
     private int version;
+    
     @JsonProperty("description")
     private String description;
+    
     @JsonProperty("scriptName")
     private String scriptName;
+    
     @JsonProperty("installDate")
     private int installDate;
 }

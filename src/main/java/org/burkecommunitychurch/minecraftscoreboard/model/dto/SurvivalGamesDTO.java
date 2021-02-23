@@ -18,24 +18,34 @@ import lombok.Setter;
 public class SurvivalGamesDTO {
     @JsonProperty("playerUuid")
     private String playerUuid;
+    
     @JsonProperty("playerName")
     private String playerName;
+    
     @JsonProperty("coins")
     private int coins;
+    
     @JsonProperty("kills")
     private int kills;
+    
     @JsonProperty("deaths")
     private int deaths;
+    
     @JsonProperty("wins")
     private int wins;
+    
     @JsonProperty("gamesPlayed")
     private int gamesPlayed;
+    
     @JsonProperty("modifier")
     private int modifier;
+    
     @JsonProperty("playTime")
     private String playTime;
+    
     @JsonProperty("kits")
     private String kits;
+    
     @JsonProperty("exp")
     private int exp;
 }

@@ -20,9 +20,14 @@ import lombok.Setter;
 public class BedwarsStatsDTO {
     @JsonProperty("playerUuid")
     private String playerUuid;
+    
+    @JsonProperty("userName")
+    private String userName;
+
     @JsonProperty("key")
     //private String key;
     private BedwarsStatsKeyEnum key;
+    
     @JsonProperty("value")
     private float value;
 }

@@ -18,8 +18,10 @@ import lombok.Setter;
 public class PartyGamesDTO {
     @JsonProperty("playerUuid")
     private String playerUuid;
+    
     @JsonProperty("playerName")
     private String playerName;
+    
     @JsonProperty("data")
     private String data;
 }

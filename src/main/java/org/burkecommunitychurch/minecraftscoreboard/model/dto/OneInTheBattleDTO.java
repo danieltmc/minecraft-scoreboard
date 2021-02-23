@@ -18,12 +18,16 @@ import lombok.Setter;
 public class OneInTheBattleDTO {
     @JsonProperty("playerUuid")
     private String playerUuid;
+    
     @JsonProperty("playerName")
     private String playerName;
+    
     @JsonProperty("stats")
     private String stats;
+    
     @JsonProperty("loadout")
     private String loadout;
+    
     @JsonProperty("inventory")
     private String inventory;
 }
