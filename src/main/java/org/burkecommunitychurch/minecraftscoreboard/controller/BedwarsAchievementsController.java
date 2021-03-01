@@ -6,6 +6,7 @@ import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsAchievement
 import org.burkecommunitychurch.minecraftscoreboard.service.BedwarsAchievementsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ public class BedwarsAchievementsController {
     @Autowired
     private BedwarsAchievementsService service;
 
+    @CrossOrigin
     @GetMapping("/all")
     public List<BedwarsAchievementsDTO> getAll() {
         return service.getAll();

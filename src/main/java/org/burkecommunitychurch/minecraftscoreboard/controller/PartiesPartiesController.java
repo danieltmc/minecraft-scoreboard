@@ -5,6 +5,7 @@ import java.util.List;
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.PartiesPartiesDTO;
 import org.burkecommunitychurch.minecraftscoreboard.service.PartiesPartiesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,16 +18,19 @@ public class PartiesPartiesController {
     @Autowired
     private PartiesPartiesService service;
 
+    @CrossOrigin
     @GetMapping("/all")
     public List<PartiesPartiesDTO> getAll() {
         return service.getAll();
     }
 
+    @CrossOrigin
     @GetMapping("/all/kills")
     public List<PartiesPartiesDTO> getAllOrderByKills() {
         return service.getAllOrderByKills();
     }
 
+    @CrossOrigin
     @GetMapping("/all/exp")
     public List<PartiesPartiesDTO> getAllOrderByExperience() {
         return service.getAllOrderByExperience();

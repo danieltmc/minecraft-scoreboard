@@ -7,6 +7,7 @@ import org.burkecommunitychurch.minecraftscoreboard.model.constant.BedwarsStatsK
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsStatsDTO;
 import org.burkecommunitychurch.minecraftscoreboard.service.BedwarsStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +21,13 @@ public class BedwarsStatsController {
     @Autowired
     private BedwarsStatsService service;
 
+    @CrossOrigin
     @GetMapping("/all")
     public List<BedwarsStatsDTO> getAll() {
         return service.getAll();
     }
 
+    @CrossOrigin
     @GetMapping("/key/{key}")
     public List<BedwarsStatsDTO> getByKey(
         @PathVariable BedwarsStatsKeyEnum key
