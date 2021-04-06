@@ -25,8 +25,8 @@ public class BedwarsStatsDTO {
     private String userName;
 
     @JsonProperty("key")
-    //private String key;
-    private BedwarsStatsKeyEnum key;
+    private String key;
+    // private BedwarsStatsKeyEnum key;
     
     @JsonProperty("value")
     private float value;
