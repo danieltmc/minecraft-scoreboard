@@ -58,7 +58,7 @@ public class BedwarsStatsServiceImpl implements BedwarsStatsService {
                 results = repo.findAll();
         }
         List<BedwarsStatsDTO> dtos = mapper.toDtoList(results);
-        dtos.sort(Comparator.comparing(BedwarsStatsDTO::getValue));
+        dtos.sort(Comparator.comparing(BedwarsStatsDTO::getValue).reversed());
         return dtos;
     }
 }
