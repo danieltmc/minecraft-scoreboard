@@ -17,9 +17,9 @@ import org.mapstruct.Mapper;
 public abstract class BedwarsStatsMapper {
     public BedwarsStats toEntity(BedwarsStatsDTO dto) {
         BedwarsStats entity =  new BedwarsStats();
-        entity.setPlayerUuid(dto.getPlayerUuid);
-        entity.setKey(dto.getKey);
-        entity.setValue(dto.getValue);
+        entity.setPlayerUuid(dto.getPlayerUuid());
+        entity.setKey(dto.getKey());
+        entity.setValue(dto.getValue());
         return entity;
     }
 
