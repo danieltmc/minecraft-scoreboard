@@ -1,5 +1,7 @@
 package org.burkecommunitychurch.minecraftscoreboard.model.constant;
 
+import java.util.*;
+
 public enum BedwarsStatsKeyEnum {
     BEDS_DESTROYED("bedwars:beds_destroyed"),
     CACHE_RANK("bedwars:cache_rank"),
@@ -20,9 +22,11 @@ public enum BedwarsStatsKeyEnum {
         this.sqlKey = key;
     }
 
-    @Override
     public BedwarsStatsKeyEnum fromValue(String value) {
-        return new BedwarsStatsKeyEnum(value);
+        return Arrays.stream(BedwarsStatsKeyEnum.values())
+                .filter(bedwarsStatsKey -> bedwarsStatsKey.sqlKey.equalsIgnoreCase(value))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected BedwarsStatKeyEnum value '" + value + "'"));
     }
 
     @Override
