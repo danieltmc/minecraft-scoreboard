@@ -21,6 +21,11 @@ public enum BedwarsStatsKeyEnum {
     }
 
     @Override
+    public BedwarsStatsKeyEnum fromValue(String value) {
+        return new BedwarsStatsKeyEnum(value);
+    }
+
+    @Override
     public String toString() {
         return this.sqlKey;
     }
