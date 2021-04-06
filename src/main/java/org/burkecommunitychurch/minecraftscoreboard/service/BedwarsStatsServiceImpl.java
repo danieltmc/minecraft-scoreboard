@@ -1,10 +1,12 @@
 package org.burkecommunitychurch.minecraftscoreboard.service;
 
+import java.util.Comparator;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsStatsDTO;
+import org.burkecommunitychurch.minecraftscoreboard.model.entity.BedwarsStats;
 import org.burkecommunitychurch.minecraftscoreboard.model.mapper.BedwarsStatsMapper;
 import org.burkecommunitychurch.minecraftscoreboard.repository.BedwarsStatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,32 +28,37 @@ public class BedwarsStatsServiceImpl implements BedwarsStatsService {
 
     @Override
     public List<BedwarsStatsDTO> getAllByKey(String key) {
+        List<BedwarsStats> results;
         switch (key) {
             case "beds_destroyed":
-                return mapper.toDtoList(repo.findByBedsDestroyedOrderByValueDesc());
+                results = repo.findByBedsDestroyedOrderByValueDesc();
             case "cache_rank":
-                return mapper.toDtoList(repo.findByCacheRankOrderByValueDesc());
+                results = repo.findByCacheRankOrderByValueDesc();
             case "deaths":
-                return mapper.toDtoList(repo.findByDeathsOrderByValueDesc());
+                results = repo.findByDeathsOrderByValueDesc();
             case "final_kills":
-                return mapper.toDtoList(repo.findByFinalKillsOrderByValueDesc());
+                results = repo.findByFinalKillsOrderByValueDesc();
             case "kd":
-                return mapper.toDtoList(repo.findByKDOrderByValueDesc());
+                results = repo.findByKDOrderByValueDesc();
             case "kills":
-                return mapper.toDtoList(repo.findByKillsOrderByValueDesc());
+                results = repo.findByKillsOrderByValueDesc();
             case "loses":
-                return mapper.toDtoList(repo.findByLossesOrderByValueDesc());
+                results = repo.findByLossesOrderByValueDesc();
             case "play_time":
-                return mapper.toDtoList(repo.findByPlayTimeOrderByValueDesc());
+                results = repo.findByPlayTimeOrderByValueDesc();
             case "rank":
-                return mapper.toDtoList(repo.findByRankOrderByValueDesc());
+                results = repo.findByRankOrderByValueDesc();
             case "rounds_played":
-                return mapper.toDtoList(repo.findByRoundsPlayedOrderByValueDesc());
+                results = repo.findByRoundsPlayedOrderByValueDesc();
             case "wins":
-                return mapper.toDtoList(repo.findByWinsOrderByValueDesc());
+                results = repo.findByWinsOrderByValueDesc();
             case "wl":
-                return mapper.toDtoList(repo.findByWLOrderByValueDesc());
+                results = repo.findByWLOrderByValueDesc();
+            default:
+                results = repo.findAll();
         }
-        return mapper.toDtoList(repo.findAll());
+        List<BedwarsStatsDTO> dtos = mapper.toDtoList(results);
+        dtos.sort(Comparator.comparing(BedwarsStatsDTO::getValue));
+        return dtos;
     }
 }
