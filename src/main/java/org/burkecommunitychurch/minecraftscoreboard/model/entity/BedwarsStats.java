@@ -2,6 +2,8 @@ package org.burkecommunitychurch.minecraftscoreboard.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.EnumType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,6 +23,7 @@ public class BedwarsStats {
 
     @Column(name = "key")
     @Getter
+    @Enumerated(EnumType.STRING)
     //private String key;
     private BedwarsStatsKeyEnum key;
 
