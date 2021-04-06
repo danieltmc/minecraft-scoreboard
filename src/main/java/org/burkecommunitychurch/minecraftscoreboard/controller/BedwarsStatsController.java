@@ -3,6 +3,7 @@ package org.burkecommunitychurch.minecraftscoreboard.controller;
 import java.io.IOException;
 import java.util.List;
 
+import org.burkecommunitychurch.minecraftscoreboard.model.constant.BedwarsStatsKeyEnum;
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsStatsDTO;
 import org.burkecommunitychurch.minecraftscoreboard.service.BedwarsStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class BedwarsStatsController {
     @CrossOrigin
     @GetMapping("/key/{key}")
     public List<BedwarsStatsDTO> getByKey(
-        @PathVariable String key
+        @PathVariable BedwarsStatsKeyEnum key
     ) throws IOException {
         return service.getAllByKey(key.toString());
     }
