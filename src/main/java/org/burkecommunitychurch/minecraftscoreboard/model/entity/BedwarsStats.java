@@ -23,9 +23,9 @@ public class BedwarsStats {
 
     @Column(name = "key")
     @Getter
-    @Enumerated(EnumType.STRING)
-    //private String key;
-    private BedwarsStatsKeyEnum key;
+    // @Enumerated(EnumType.STRING)
+    private String key;
+    // private BedwarsStatsKeyEnum key;
 
     @Column(name = "value")
     @Getter
