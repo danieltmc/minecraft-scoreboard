@@ -29,7 +29,7 @@ public class BedwarsStatsServiceImpl implements BedwarsStatsService {
     @Override
     public List<BedwarsStatsDTO> getAllByKey(String key) {
         List<BedwarsStats> results;
-        switch (key) {
+        switch (key.toLowerCase()) {
             case "beds_destroyed":
                 results = repo.findByBedsDestroyedOrderByValueDesc();
             case "cache_rank":
