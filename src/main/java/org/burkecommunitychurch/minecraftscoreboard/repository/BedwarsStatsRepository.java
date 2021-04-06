@@ -1,6 +1,6 @@
 package org.burkecommunitychurch.minecraftscoreboard.repository;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.BedwarsStats;
 import org.springframework.data.jpa.repository.Query;
@@ -10,44 +10,44 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BedwarsStatsRepository extends CrudRepository<BedwarsStats, String> {
     @Query(value = "SELECT * FROM mbedwars_player_stats", nativeQuery = true)
-    Collection<BedwarsStats> findAll();
+    List<BedwarsStats> findAll();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = ?1", nativeQuery = true)
-    Collection<BedwarsStats> findByKeyOrderByValueDesc(String key);
+    List<BedwarsStats> findByKeyOrderByValueDesc(String key);
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:beds_destroyed' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByBedsDestroyedOrderByValueDesc();
+    List<BedwarsStats> findByBedsDestroyedOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:cache_rank' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByCacheRankOrderByValueDesc();
+    List<BedwarsStats> findByCacheRankOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:deaths' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByDeathsOrderByValueDesc();
+    List<BedwarsStats> findByDeathsOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:final_kills' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByFinalKillsOrderByValueDesc();
+    List<BedwarsStats> findByFinalKillsOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:kd' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByKDOrderByValueDesc();
+    List<BedwarsStats> findByKDOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:kills' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByKillsOrderByValueDesc();
+    List<BedwarsStats> findByKillsOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:loses' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByLossesOrderByValueDesc();
+    List<BedwarsStats> findByLossesOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:play_time' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByPlayTimeOrderByValueDesc();
+    List<BedwarsStats> findByPlayTimeOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:rank' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByRankOrderByValueDesc();
+    List<BedwarsStats> findByRankOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:rounds_played' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByRoundsPlayedOrderByValueDesc();
+    List<BedwarsStats> findByRoundsPlayedOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:wins' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByWinsOrderByValueDesc();
+    List<BedwarsStats> findByWinsOrderByValueDesc();
 
     @Query(value = "SELECT * FROM mbedwars_player_stats WHERE mbedwars_player_stats.key = 'bedwars\\:wl' ORDER BY value DESC", nativeQuery = true)
-    Collection<BedwarsStats> findByWLOrderByValueDesc();
+    List<BedwarsStats> findByWLOrderByValueDesc();
 }
