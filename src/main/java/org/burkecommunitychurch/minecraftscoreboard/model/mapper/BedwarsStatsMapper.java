@@ -22,13 +22,15 @@ public abstract class BedwarsStatsMapper {
         // Fetch and assign userName
         ObjectMapper objectMapper = new ObjectMapper();
         MojangPlayer mojangPlayer = new MojangPlayer();
-        try {
-            mojangPlayer = objectMapper.readValue(new URL("https://sessionserver.mojang.com/session/minecraft/profile/"
-                    + bedwarsStats.getPlayerUuid()), MojangPlayer.class);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!bedwarsStats.getPlayerUuid().startsWith("00000000")) {
+            try {
+                mojangPlayer = objectMapper.readValue(new URL("https://sessionserver.mojang.com/session/minecraft/profile/"
+                        + bedwarsStats.getPlayerUuid()), MojangPlayer.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            dto.setUserName(mojangPlayer.getName());
         }
-        dto.setUserName(mojangPlayer.getName());
 
         dto.setKey(bedwarsStats.getKey());
         dto.setValue(bedwarsStats.getValue());

@@ -2,12 +2,8 @@ package org.burkecommunitychurch.minecraftscoreboard.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.EnumType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.burkecommunitychurch.minecraftscoreboard.model.constant.BedwarsStatsKeyEnum;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
