@@ -9,7 +9,7 @@ import org.burkecommunitychurch.minecraftscoreboard.model.entity.TheWalls;
 import org.mapstruct.Mapper;
 
 @Mapper
-public class TheWallsMapper {
+public abstract class TheWallsMapper {
     public TheWallsDTO toDto(TheWalls entity) {
         TheWallsDTO dto = new TheWallsDTO();
         dto.setPlayerUuid(entity.getPlayerUuid());
@@ -21,14 +21,14 @@ public class TheWallsMapper {
     }
 
     public List<TheWallsDTO> toDtoList(List<TheWalls> list) {
-        return list.stream().map(td ->
-            toDto(td))
+        return list.stream().map(tw ->
+            toDto(tw))
             .collect(Collectors.toList());
     }
 
     public List<TheWallsDTO> toDtoList(Collection<TheWalls> list) {
-        return list.stream().map(td ->
-            toDto(td))
+        return list.stream().map(tw ->
+            toDto(tw))
             .collect(Collectors.toList());
     }
 }
