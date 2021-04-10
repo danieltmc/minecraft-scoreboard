@@ -19,9 +19,11 @@ public class TheWallsController {
     @Autowired
     private TheWallsService service;
 
+    /*
     @CrossOrigin
     @GetMapping("/all")
     public List<TheWallsDTO> getAll() {
         return service.getAll();
     }
+    */
 }
