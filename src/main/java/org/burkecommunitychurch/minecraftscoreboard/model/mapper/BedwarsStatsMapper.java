@@ -11,7 +11,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.burkecommunitychurch.minecraftscoreboard.model.dto.BedwarsStatsDTO;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.BedwarsStats;
 import org.burkecommunitychurch.minecraftscoreboard.model.entity.MojangPlayer;
-import org.burkecommunitychurch.minecraftscoreboard.model.entity.MojangPlayerAlt;
 import org.mapstruct.Mapper;
 
 @Mapper
@@ -22,18 +21,15 @@ public abstract class BedwarsStatsMapper {
 
         // Fetch and assign userName
         ObjectMapper objectMapper = new ObjectMapper();
-        // MojangPlayer mojangPlayer = new MojangPlayer();
-        MojangPlayerAlt mojangPlayer = new MojangPlayerAlt();
+        MojangPlayer mojangPlayer = new MojangPlayer();
         if (!bedwarsStats.getPlayerUuid().startsWith("00000000")) {
             try {
-                // mojangPlayer = objectMapper.readValue(new URL("https://sessionserver.mojang.com/session/minecraft/profile/"
-                //         + bedwarsStats.getPlayerUuid()), MojangPlayer.class);
-                mojangPlayer = objectMapper.readValue(new URL("https://playerdb.co/api/player/minecraft/" + bedwarsStats.getPlayerUuid()), MojangPlayerAlt.class);
+                mojangPlayer = objectMapper.readValue(new URL("https://sessionserver.mojang.com/session/minecraft/profile/"
+                        + bedwarsStats.getPlayerUuid()), MojangPlayer.class);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            // dto.setUserName(mojangPlayer.getName());
-            dto.setUserName(mojangPlayer.getUserName());
+            dto.setUserName(mojangPlayer.getName());
         }
 
         dto.setKey(bedwarsStats.getKey());
